@@ -5,6 +5,9 @@
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
 int main() {
+
+    int torre = 1, bispo, rainha = 8;
+
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
 
@@ -27,6 +30,34 @@ int main() {
 
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
+    
+    printf("\nBispo ][\n");
+    for (bispo = 1; bispo <= 5; bispo++) //inicializa com um valor; condiciona "true" ou "false" e continua enquanto for "true"; incrementa ++ até a condição ser "false";
+    {
+        printf("Cima ^\n");
+        printf("Direita =>\n");
+    }
+    printf("\n");
+
+    printf("\nTorre ][ \n");
+
+    while (torre <= 5) //condiciona a execução do bloco de código enquanto valor for "true";
+    {
+        printf("Direita =>\n");
+        torre++; //incrementa uma unidade a cada execução do bloco de código até se tornar "false";
+    }
+    printf("\n");
+
+    printf("\nRainha ][ \n");
+
+    do 
+    {
+        //inicializa com um valor "true" para a condição;
+        printf("<= Esquerda\n");
+        rainha--;
+
+    } while (rainha >= 1); //Enquanto o valor for "true" e maior ou igual a 1, a peça continará se movendo até se tornar "false";
+
 
     return 0;
 }
