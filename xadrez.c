@@ -31,7 +31,8 @@ int main() {
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
     
-    printf("\nBispo ][\n");
+    printf("Bispo ][\n");
+
     for (bispo = 1; bispo <= 5; bispo++) //inicializa com um valor; condiciona "true" ou "false" e continua enquanto for "true"; incrementa ++ até a condição ser "false";
     {
         printf("Cima ^\n");
@@ -39,7 +40,7 @@ int main() {
     }
     printf("\n");
 
-    printf("\nTorre ][ \n");
+    printf("Torre ][ \n");
 
     while (torre <= 5) //condiciona a execução do bloco de código enquanto valor for "true";
     {
@@ -48,7 +49,7 @@ int main() {
     }
     printf("\n");
 
-    printf("\nRainha ][ \n");
+    printf("Rainha ][\n");
 
     do 
     {
@@ -58,6 +59,28 @@ int main() {
 
     } while (rainha >= 1); //Enquanto o valor for "true" e maior ou igual a 1, a peça continará se movendo até se tornar "false";
 
+    printf("\n");
+    
+    //Estrutura de repetição aninhadas (for);
+    //Movimentação em L: duas casas abaixo e uma casa a esquerda;
+
+    int cavalo;
+
+    printf("Cavalo ][\n");
+
+    for(cavalo = 1;cavalo <= 2;cavalo++){ //inicialização; condição; incremento;
+
+        while(cavalo <= 2){ //a peça se moverá duas casas para baixo, e uma a esquerda, com direções básicas de cada movimento;
+            printf("Baixo v \n");
+            printf("Baixo v \n");
+            printf("Baixo v \n");
+            printf("<= Esquerda\n");
+            
+            cavalo++;
+
+        }
+        printf("\n");
+    }
 
     return 0;
 }
