@@ -4,9 +4,57 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
-int main() {
 
-    int torre = 1, bispo, rainha = 8;
+    
+void adiciona_torre(int torre){ //função recursiva para variável torre;
+    if(torre <= 5 ){ //A condição if executa o bloco de código dentro da função recursiva;
+
+        printf("Direita =>\n");
+        
+        adiciona_torre(torre + 1); //Repetição da função recursiva para a variável incrementar + 1;
+
+    }
+
+}
+
+void adiciona_bispo(int bispo){ //função recursiva para variável bispo;
+    if(bispo <= 5 ){ //A condição if executa o bloco de código dentro da função recursiva;
+
+        printf("Cima ^ \n");
+        printf("Direita =>\n");
+
+        adiciona_bispo(bispo + 1); //Repetição da função recursiva para a variável incrementar + 1;
+
+    }
+        
+}
+
+void adiciona_rainha(int rainha){ //função recursiva para variável rainha;
+    if(rainha <= 8){ //A condição if executa o bloco de código dentro da função recursiva;
+
+        printf("<= Esquerda\n");
+        
+        adiciona_rainha(rainha + 1); //Repetição da função recursiva para a variável incrementar + 1;
+
+    }
+    
+}
+
+void adiciona_cavalo(int cavalo){ //função recursiva para variável cavalo;
+    if(cavalo <= 2 ){ //A condição if executa o bloco de código dentro da função recursiva;
+
+        printf("Cima ^ \n");
+        printf("Cima ^ \n");
+        printf("Cima ^ \n");
+        printf("Direita =>\n");
+        
+        adiciona_cavalo(cavalo + 1); //Repetição da função recursiva para a variável incrementar + 1;
+
+    }
+
+}
+
+int main() {
 
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
@@ -31,55 +79,69 @@ int main() {
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
     
+    int torre = 1, rainha = 1;
+
+
+    //Utiliza loops aninhados e função recursiva;
     printf("Bispo ][\n");
 
-    for (bispo = 1; bispo <= 5; bispo++) //inicializa com um valor; condiciona "true" ou "false" e continua enquanto for "true"; incrementa ++ até a condição ser "false";
+    for (int bispo = 1; bispo <= 5; bispo++) //inicializa com um valor; condiciona "true" ou "false" e continua enquanto for "true"; incrementa ++ até a condição ser "false";
     {
-        printf("Cima ^\n");
-        printf("Direita =>\n");
+        while(bispo <= 1){ //Bloco de código será executado ao mesmo tempo que chama a função void recursiva dentro da função principal (int main);
+            
+            adiciona_bispo(bispo); //O alinhamento entre o loop e a função void recursiva, repete a quatidade vezes que a peça se moverá;
+            
+            break;
+        }
     }
     printf("\n");
 
-    printf("Torre ][ \n");
 
-    while (torre <= 5) //condiciona a execução do bloco de código enquanto valor for "true";
+
+    printf("Torre ][\n");
+
+    while (torre <= 5) //condiciona a execução do bloco de código e ao mesmo tempo que chama a função void recursiva;
     {
-        printf("Direita =>\n");
-        torre++; //incrementa uma unidade a cada execução do bloco de código até se tornar "false";
+
+        adiciona_torre(torre); //O alinhamento entre o loop e a função void recursiva, repete a quatidade vezes que a peça se moverá;
+        break;
+    
     }
     printf("\n");
+
+
 
     printf("Rainha ][\n");
 
-    do 
+    do //Bloco de código será executado ao mesmo tempo que chama a função void recursiva dentro da função principal (int main);
     {
-        //inicializa com um valor "true" para a condição;
-        printf("<= Esquerda\n");
-        rainha--;
+        
+        adiciona_rainha(rainha); //O alinhamento entre o loop e a função void recursiva, repete a quatidade vezes que a peça se moverá;
 
-    } while (rainha >= 1); //Enquanto o valor for "true" e maior ou igual a 1, a peça continará se movendo até se tornar "false";
+        break;
 
+    } while (rainha <= 8); //Enquanto o valor for "true" e maior ou igual a 1, a peça continará se movendo até se tornar "false";
     printf("\n");
-    
+
+
+
     //Estrutura de repetição aninhadas (for);
     //Movimentação em L: duas casas abaixo e uma casa a esquerda;
-
-    int cavalo;
+    // Cavalo: 1 vez em L para cima à direita;
+    //movimentação do cavalo utilizará loops com variáveis múltiplas e/ou condições múltiplas, permitindo o uso de continue e break.
+    //variáveis para loops avançados de múltiplas variáveis, condições e atualizações;
 
     printf("Cavalo ][\n");
 
-    for(cavalo = 1;cavalo <= 2;cavalo++){ //inicialização; condição; incremento;
+    for(int cavalo = 1, cavalo_1 = 2;cavalo <= 2;cavalo++, cavalo_1--){ //Cada condição das variáveis executa um loop externo e outro interno;
+        
+        while(cavalo_1 <= 1){
 
-        while(cavalo <= 2){ //a peça se moverá duas casas para baixo, e uma a esquerda, com direções básicas de cada movimento;
-            printf("Baixo v \n");
-            printf("Baixo v \n");
-            printf("Baixo v \n");
-            printf("<= Esquerda\n");
+            adiciona_cavalo(cavalo);
             
-            cavalo++;
+            break;
 
         }
-        printf("\n");
     }
 
     return 0;
